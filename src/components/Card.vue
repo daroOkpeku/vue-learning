@@ -1,19 +1,24 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 // this is how to get the props passed from another file in vue
 import { defineProps } from 'vue';
 const {quizez} = defineProps(['quizez'])
-console.log(quizez)
 // this is how to get the props passed from another file in vue
+
 
 </script>
 <template>
 
 <div  v-for="quiz in quizez"  :key="quiz.id" class="card">
   <img :src="quiz.img" alt="" />
-  <div class="card-text">
+  <!-- this is how to pass data through the url :to="{name:'singlequiz', params:{slug:quiz.id}}  -->
+  <RouterLink :to="{name:'singlequiz', params:{slug:quiz.id}}">
+    <div class="card-text">
   <h2>{{ quiz.name }}</h2>
   <p>{{ quiz.questions.length }} questions</p>
   </div>
+  </RouterLink>
+  
     </div>
 
 </template>

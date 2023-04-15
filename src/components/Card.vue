@@ -1,10 +1,15 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 // this is how to get the props passed from another file in vue
 import { defineProps } from 'vue';
 const {quizez} = defineProps(['quizez'])
 // this is how to get the props passed from another file in vue
 
+const route = useRouter();
+
+const navigationrouter = (id)=>{
+  route.push(`singlequiz/${id}`);
+}
 
 </script>
 <template>
@@ -12,13 +17,19 @@ const {quizez} = defineProps(['quizez'])
 <div  v-for="quiz in quizez"  :key="quiz.id" class="card">
   <img :src="quiz.img" alt="" />
   <!-- this is how to pass data through the url :to="{name:'singlequiz', params:{slug:quiz.id}}  -->
-  <RouterLink :to="{name:'singlequiz', params:{slug:quiz.id}}">
+  <!-- <RouterLink :to="{name:'singlequiz', params:{slug:quiz.id}}">
     <div class="card-text">
   <h2>{{ quiz.name }}</h2>
   <p>{{ quiz.questions.length }} questions</p>
   </div>
-  </RouterLink>
-  
+  </RouterLink> -->
+   <!-- this is how to pass data through the url :to="{name:'singlequiz', params:{slug:quiz.id}}  -->
+
+   <div class="card-text" @click="navigationrouter(quiz.id)">
+  <h2>{{ quiz.name }}</h2>
+  <p>{{ quiz.questions.length }} questions</p>
+  </div>
+
     </div>
 
 </template>

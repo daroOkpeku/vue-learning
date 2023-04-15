@@ -23,13 +23,7 @@ watch(search, ()=>{
 <!-- container -->
 <div class="options-container">
 <!-- card -->
-<!-- <div v-for="course in quizez" :key="course.id" class="card">
-  <img :src="course.img" alt="" />
-  <div class="card-text">
-  <h2>{{ course.name }}</h2>
-  <p> {{ course.questions.length }} questions</p>
-  </div>
-    </div> -->
+
   <!--this is how to pass props into a compnonent eg you use this : and call the name preferable the name of the function, array, or variable   -->
    <Card :quizez="quizez" />
   <!-- <div class="card">

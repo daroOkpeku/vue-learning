@@ -13,6 +13,12 @@ const routers = createRouter({
 
         },
         {
+            // this work when the user add 127.0.0.1/home it redirect the user to main page
+            path:"/home",
+            redirect:'/'
+
+        },
+        {
             path:'/quiz',
             name:"quiz",
             component:Quiz
@@ -23,7 +29,7 @@ const routers = createRouter({
             component:Counter
         }, 
         {
-            path:'/SinngleQuiz/:slug',
+            path:'/singlequiz/:slug',
             name:'singlequiz',
             component:SingleQuiz
         }

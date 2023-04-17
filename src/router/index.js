@@ -3,6 +3,7 @@ import Quiz from '../Quiz.vue'
 import Counter from '../Counter.vue'
 import Home from '../Home.vue'
 import SingleQuiz from '../SingleQuiz.vue'
+import Pinia from '../Pinia.vue'
 const routers = createRouter({
     history:createWebHistory(import.meta.env.Base_URL),
     routes:[
@@ -32,6 +33,11 @@ const routers = createRouter({
             path:'/singlequiz/:slug',
             name:'singlequiz',
             component:SingleQuiz
+        },
+        {
+            path:'/pinia',
+            name:'pinia',
+            component:Pinia
         }
     ]
 });

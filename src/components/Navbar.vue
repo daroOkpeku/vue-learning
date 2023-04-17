@@ -5,6 +5,7 @@ import {RouterLink} from "vue-router"
     <div>
       <RouterLink to="/quiz">quiz</RouterLink>
       <RouterLink to="/counter">counter</RouterLink>
+      <RouterLink to="/pinia">Pinia</RouterLink>
     </div>
 </template>
 <style scoped>
